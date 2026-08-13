@@ -6,6 +6,16 @@ import sys
 import time
 from datetime import datetime
 
+# ==========================================
+# CONFIGURATION
+# ==========================================
+# How many recent versions of an app to unconditionally protect from deletion.
+KEEP_COUNT = 10
+
+# How many days a version must be inactive before it is eligible for deletion.
+KEEP_DAYS = 30
+# ==========================================
+
 def run_cmd(cmd):
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     if result.returncode != 0:
@@ -48,9 +58,8 @@ def cleanup_releases():
         re.IGNORECASE
     )
 
-    keep_count = 10
     current_time = int(time.time())
-    thirty_days_sec = 30 * 24 * 60 * 60
+    expire_sec = KEEP_DAYS * 24 * 60 * 60
     usage_data_changed = False
 
     for release in releases:
@@ -89,13 +98,13 @@ def cleanup_releases():
             reverse=True
         )
 
-        to_keep_versions = sorted_versions[:keep_count]
-        remaining_versions = sorted_versions[keep_count:]
+        to_keep_versions = sorted_versions[:KEEP_COUNT]
+        remaining_versions = sorted_versions[KEEP_COUNT:]
         
         to_delete_versions = []
         for v_key, v_assets in remaining_versions:
             score = version_scores[v_key]
-            if (current_time - score) > thirty_days_sec:
+            if (current_time - score) > expire_sec:
                 to_delete_versions.append((v_key, v_assets))
             else:
                 to_keep_versions.append((v_key, v_assets))
