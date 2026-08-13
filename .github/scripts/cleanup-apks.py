@@ -51,6 +51,7 @@ def cleanup_releases():
     keep_count = 10
     current_time = int(time.time())
     thirty_days_sec = 30 * 24 * 60 * 60
+    usage_data_changed = False
 
     for release in releases:
         tag = release.get("tag_name")
@@ -112,6 +113,21 @@ def cleanup_releases():
                 print(f"    Deleting asset: {asset_name} (ID: {asset_id})")
                 cmd = f'gh api -X DELETE repos/{repo}/releases/assets/{asset_id}'
                 run_cmd(cmd)
+            
+            if v_key in usage_data:
+                del usage_data[v_key]
+                usage_data_changed = True
+
+    if usage_data_changed:
+        print("\n--- Updating usage.json ---")
+        with open(usage_file, 'w', encoding='utf-8') as f:
+            json.dump(usage_data, f, indent=2)
+        run_cmd("git config user.name 'github-actions[bot]'")
+        run_cmd("git config user.email 'github-actions[bot]@users.noreply.github.com'")
+        run_cmd("git add usage.json")
+        run_cmd("git commit -m 'chore: prune deleted versions from usage.json'")
+        run_cmd("git push origin main")
+        print("Successfully pruned usage.json.")
 
 if __name__ == "__main__":
     cleanup_releases()
