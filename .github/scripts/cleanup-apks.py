@@ -61,6 +61,7 @@ def cleanup_releases():
     current_time = int(time.time())
     expire_sec = KEEP_DAYS * 24 * 60 * 60
     usage_data_changed = False
+    all_existing_versions = set()
 
     for release in releases:
         tag = release.get("tag_name")
@@ -74,6 +75,7 @@ def cleanup_releases():
         for asset in assets:
             name = asset['name']
             version_key = suffix_pattern.sub('', name)
+            all_existing_versions.add(version_key)
             
             if version_key not in version_groups:
                 version_groups[version_key] = []
@@ -132,6 +134,14 @@ def cleanup_releases():
             if v_key in usage_data:
                 del usage_data[v_key]
                 usage_data_changed = True
+
+    ghost_keys = [k for k in usage_data.keys() if k not in all_existing_versions]
+    if ghost_keys:
+        print(f"\n--- Pruning {len(ghost_keys)} missing versions from usage.json ---")
+        for gk in ghost_keys:
+            print(f"  Removing ghost entry: {gk}")
+            del usage_data[gk]
+        usage_data_changed = True
 
     if usage_data_changed:
         print("\n--- Updating usage.json ---")
