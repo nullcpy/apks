@@ -75,6 +75,12 @@ def cleanup_releases():
         for v_key, v_assets in version_groups.items():
             gh_time = max(parse_gh_time(a['created_at']) for a in v_assets)
             tracked_time = usage_data.get(v_key, 0)
+            
+            # Index manually uploaded or legacy files directly into usage.json
+            if tracked_time == 0:
+                usage_data[v_key] = gh_time
+                usage_data_changed = True
+                
             version_scores[v_key] = max(gh_time, tracked_time)
 
         sorted_versions = sorted(
