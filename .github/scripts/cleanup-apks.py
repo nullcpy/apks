@@ -54,7 +54,7 @@ def cleanup_releases():
             print(f"Failed to load usage.json: {e}")
 
     suffix_pattern = re.compile(
-        r'-(all|arm-v7a|arm64-v8a|common|universal|x86|x86_64|armeabi-v7a)\.(apk|apkm|xapk)$',
+        r'-(all|arm-v7a|arm64-v8a|common|universal|x86|x86_64|armeabi-v7a)\.(apk|apkm|xapk|apks)$',
         re.IGNORECASE
     )
 
