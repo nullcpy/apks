@@ -1,12 +1,12 @@
 {
   "tv.pluto.android-5.66.0-leanback": 1787025359,
   "org.hola.play-AARCH64_1.248.400": 1787002392,
-  "jp.pxv.android-6.141.1": 1786589257,
+  "jp.pxv.android-6.141.1": 1787045810,
   "com.zhiliaoapp.musically-46.2.3": 1786933901,
   "com.windscribe.vpn-4.1.2274": 1782820243,
   "com.weather.Weather-16.16.0": 1787002392,
   "com.wbd.hbomax-7.7.0.78": 1787025359,
-  "com.viber.voip-26.1.2.0": 1786589366,
+  "com.viber.voip-26.1.2.0": 1787045810,
   "com.univision.prendetv-4.46.0_tv": 1787025359,
   "com.univision.prendetv-4.47.2_tv": 1785435719,
   "com.twitter.android-12.11.0-release.0": 1785115944,
@@ -24,7 +24,7 @@
   "com.reddit.frontpage-2026.31.1": 1786110869,
   "com.reddit.frontpage-2026.32.0": 1787045240,
   "com.peacocktv.peacockandroid-7.6.100": 1787025359,
-  "com.microblink.photomath-8.48.0": 1786590666,
+  "com.microblink.photomath-8.48.0": 1787045810,
   "com.instagram.barcelona-434.0.0.41.74": 1786590639,
   "com.instagram.android-430.0.0.53.80": 1779947151,
   "com.instagram.android-435.0.0.37.76": 1782623895,
@@ -94,7 +94,7 @@
   "it.mirko.beta-0.9.4": 1787002392,
   "com.dubox.drive-4.22.6": 1787002392,
   "com.instagram.android-443.0.0.48.82": 1787020768,
-  "com.google.android.apps.photos-7.88.0.966185373": 1787022493,
+  "com.google.android.apps.photos-7.88.0.966185373": 1787045810,
   "cz.ackee.ventusky-53.1": 1787030738,
   "com.hellochinese-7.10.20": 1787030738,
   "com.duolingo-6.92.5": 1787030738,
@@ -112,5 +112,7 @@
   "com.merriamwebster-5.5.0": 1787030738,
   "com.bambuna.podcastaddict-2026.4": 1787030738,
   "com.intsig.camscanner-7.20.0.2606230000": 1787037197,
-  "com.amazon.avod.thirdpartyclient-3.0.452.1047": 1787037197
+  "com.amazon.avod.thirdpartyclient-3.0.452.1047": 1787037197,
+  "com.google.android.apps.recorder-4.2.20260709.960184543": 1787045810,
+  "com.strava-473.11": 1787045810
 }
