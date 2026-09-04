@@ -101,4 +101,4 @@ If you prefer keeping your APKs in a separate download folder rather than moving
 
 ## 🧹 Maintenance & Retention
 
-A daily GitHub Actions workflow (`cleanup-apks.py`) monitors `usage.json` and evicts older APK variants that have not been requested by RVB within 30 days, keeping the cache lean and within GitHub storage quotas.
+A weekly GitHub Actions workflow (running every Sunday at midnight) (`cleanup-apks.py`) monitors `usage.json` and evicts older APK variants that have not been requested by RVB within 30 days, keeping the cache lean and within GitHub storage quotas.
