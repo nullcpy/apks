@@ -80,7 +80,7 @@ try {
             Write-Host "[+] Release '$packageName' does not exist. Creating and uploading..." -ForegroundColor Yellow
             
             # Create a new release and upload the file at the same time
-            gh release create $packageName $apk.FullName --repo $Repo --title $packageName --notes ""
+            gh release create $packageName $apk.FullName --repo $Repo --title $packageName --notes " "
             
             if ($LASTEXITCODE -eq 0) {
                 Write-Host "[+] Successfully created release '$packageName' and uploaded $fileName." -ForegroundColor Green
