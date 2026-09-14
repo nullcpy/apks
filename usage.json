@@ -51,7 +51,7 @@
   "com.community.mbox.tv-1.1.5.0711.03": 1785219264,
   "com.community.mbox.tv-1.1.6.0723.03": 1787185528,
   "com.chimbori.hermitcrab-31.6.1": 1788866706,
-  "com.amazon.amazonvideo.livingroom-6.23.23+v15.5.0.70-armv7a": 1788918592,
+  "com.amazon.amazonvideo.livingroom-6.23.23+v15.5.0.70-armv7a": 1789363132,
   "com.adobe.reader-26.5.0.45958": 1786943989,
   "com.adobe.lrmobile-11.4.5": 1787030738,
   "com.adguard.android-4.13.1": 1787030738,
@@ -71,7 +71,7 @@
   "com.maxmpz.audioplayer-build-1025-bundle-play": 1788877906,
   "com.google.android.apps.photos-7.88.0.963667563": 1786700329,
   "com.google.android.youtube-21.33.321": 1787391082,
-  "com.netflix.ninja-13.0.1build25028": 1788918592,
+  "com.netflix.ninja-13.0.1build25028": 1789363132,
   "com.facebook.katana-490.0.0.63.82": 1786712908,
   "com.strava-476.12": 1786720704,
   "com.michaldrabik.showly2-3.70.0": 1789333550,
@@ -107,7 +107,7 @@
   "com.google.android.apps.recorder-4.2.20260709.960184543": 1787045810,
   "com.strava-473.11": 1787045810,
   "com.google.android.apps.youtube.music-9.32.51": 1787073554,
-  "com.wbd.hbomax-7.9.0.61": 1789358621,
+  "com.wbd.hbomax-7.9.0.61": 1789363132,
   "com.google.android.apps.photos-7.89.0.966319819": 1787115774,
   "com.microsoft.emmx-151.0.4129.70": 1788857029,
   "com.google.android.apps.youtube.music-9.33.52": 1787737119,
@@ -221,7 +221,7 @@
   "com.adobe.photoshopmix-2.6.346": 1789109291,
   "com.adobe.scan.android-26.08.01": 1789109291,
   "com.google.android.apps.photos-7.80.0.929302933": 1789159812,
-  "com.brave.browser-1.95.101": 1789358621,
+  "com.brave.browser-1.95.101": 1789363132,
   "jp.pxv.android-6.196.0": 1789159812,
   "com.google.android.apps.youtube.music-9.36.50": 1789358323,
   "com.discord-344.13-Stable": 1789244239,
@@ -229,5 +229,6 @@
   "com.brave.browser_nightly-1.97.13": 1788859614,
   "com.brave.browser_beta-1.96.48": 1788859492,
   "com.reddit.frontpage-2026.37.0": 1789358323,
-  "dk.tacit.android.foldersync.lite-4.12.0": 1789316949
+  "dk.tacit.android.foldersync.lite-4.12.0": 1789316949,
+  "com.disney.disneyplus-26.16.0+rc2-2026.09.08": 1789363132
 }
