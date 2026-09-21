@@ -71,7 +71,7 @@
   "com.netflix.ninja-13.0.1build25028": 1789874396,
   "com.facebook.katana-490.0.0.63.82": 1786712908,
   "com.strava-476.12": 1786720704,
-  "com.michaldrabik.showly2-3.70.0": 1790014643,
+  "com.michaldrabik.showly2-3.70.0": 1790021883,
   "com.disney.disneyplus-26.12.1+rc1-2026.07.15": 1788918592,
   "com.tumblr-45.8.0.110": 1789874396,
   "tv.twitch.android.app-30.7.2": 1789961838,
@@ -198,7 +198,7 @@
   "com.google.android.apps.magazines-5.163.0.947799485": 1788857029,
   "com.medium.reader-4.5.1302097": 1788864048,
   "com.lumina.wallpapers-1.0.2.4": 1788866706,
-  "ch.protonmail.android-7.11.5": 1790014643,
+  "ch.protonmail.android-7.11.5": 1790021883,
   "tv.twitch.android.app-13.0.0.2": 1789874396,
   "com.google.android.apps.recorder-4.2.20260709.976121876": 1789961838,
   "ginlemon.flowerfree-6.6build016": 1789703549,
@@ -251,5 +251,7 @@
   "com.brave.browser_beta-1.97.43": 1789917978,
   "com.brave.browser-1.95.104": 1789961838,
   "com.zhiliaoapp.musically-47.0.3": 1789961838,
-  "com.ss.android.ugc.trill-47.0.3": 1789961838
+  "com.ss.android.ugc.trill-47.0.3": 1789961838,
+  "com.pinterest-14.34.0": 1790021883,
+  "net.tsapps.appsales-12.3": 1790021883
 }
