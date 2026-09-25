@@ -23,7 +23,7 @@
   "com.reddit.frontpage-2026.31.1": 1786110869,
   "com.reddit.frontpage-2026.32.0": 1787332359,
   "com.peacocktv.peacockandroid-7.6.100": 1788621410,
-  "com.microblink.photomath-8.48.0": 1788214673,
+  "com.microblink.photomath-8.48.0": 1790330441,
   "com.instagram.barcelona-434.0.0.41.74": 1790046399,
   "com.instagram.android-430.0.0.53.80": 1779947151,
   "com.instagram.android-435.0.0.37.76": 1787988505,
@@ -235,7 +235,7 @@
   "com.weather.Weather-16.21.1": 1789530742,
   "com.picsart.studio-30.7.8": 1789751218,
   "in.amazon.mShop.android.shopping-32.17.0.300": 1789530742,
-  "com.facebook.katana-577.0.0.50.72": 1790284188,
+  "com.facebook.katana-577.0.0.50.72": 1790330441,
   "com.pandora.android-2609.1": 1789703549,
   "com.adobe.lrmobile-11.5.22": 1789704706,
   "com.instagram.android-447.0.0.55.81": 1789709018,
@@ -263,5 +263,6 @@
   "com.brave.browser_beta-1.97.47": 1790248708,
   "com.brave.browser_nightly-1.98.27": 1790248708,
   "com.google.android.apps.youtube.music-9.38.51": 1790306524,
-  "com.brave.browser-1.96.59": 1790306952
+  "com.brave.browser-1.96.59": 1790306952,
+  "org.telegram.messenger-12.10.1": 1790330441
 }
