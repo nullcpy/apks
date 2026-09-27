@@ -117,7 +117,7 @@
   "com.reddit.frontpage-2026.34.0": 1787826831,
   "com.google.android.apps.photos-7.89.0.968035987": 1787505043,
   "com.brave.browser-1.93.138": 1787871851,
-  "com.google.android.inputmethod.latin-18.0.3.954559732-release-arm64-v8a": 1790076654,
+  "com.google.android.inputmethod.latin-18.0.3.954559732-release-arm64-v8a": 1790476747,
   "com.google.android.youtube-21.34.243": 1787958515,
   "in.amazon.mShop.android.shopping-32.15.0.300": 1787505043,
   "com.dubox.drive-4.23.5": 1788194306,
@@ -242,7 +242,7 @@
   "com.discord-345.9-Stable": 1789709018,
   "org.swiftapps.swiftbackup-5.1.0": 1790400063,
   "eu.faircode.email-1.2337": 1789786713,
-  "com.google.android.youtube-21.16.256": 1790399398,
+  "com.google.android.youtube-21.16.256": 1790476747,
   "com.google.android.youtube-21.38.123": 1790399398,
   "com.reddit.frontpage-2026.38.0": 1790267885,
   "com.google.android.apps.youtube.music-9.37.54": 1790248463,
@@ -267,5 +267,6 @@
   "org.telegram.messenger-12.10.1": 1790330441,
   "com.reddit.frontpage-2026.24.0": 1790399398,
   "com.reddit.frontpage-2026.39.0": 1790399398,
-  "dev.vodik7.atvtools-1.3.2": 1790472304
+  "dev.vodik7.atvtools-1.3.2": 1790472304,
+  "com.google.android.youtube-21.39.522": 1790476747
 }
