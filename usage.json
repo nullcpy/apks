@@ -66,7 +66,7 @@
   "com.netflix.ninja-13.0.1build25028": 1790477803,
   "com.facebook.katana-490.0.0.63.82": 1786712908,
   "com.strava-476.12": 1786720704,
-  "com.michaldrabik.showly2-3.70.0": 1790477803,
+  "com.michaldrabik.showly2-3.70.0": 1790518580,
   "com.disney.disneyplus-26.12.1+rc1-2026.07.15": 1788918592,
   "com.tumblr-45.8.0.110": 1789874396,
   "tv.twitch.android.app-30.7.2": 1789961838,
@@ -191,7 +191,7 @@
   "com.google.android.apps.magazines-5.163.0.947799485": 1788857029,
   "com.medium.reader-4.5.1302097": 1788864048,
   "com.lumina.wallpapers-1.0.2.4": 1788866706,
-  "ch.protonmail.android-7.11.5": 1790477803,
+  "ch.protonmail.android-7.11.5": 1790518580,
   "tv.twitch.android.app-13.0.0.2": 1790477803,
   "com.google.android.apps.recorder-4.2.20260709.976121876": 1789961838,
   "ginlemon.flowerfree-6.6build016": 1789703549,
@@ -260,11 +260,12 @@
   "org.telegram.messenger-12.10.1": 1790330441,
   "com.reddit.frontpage-2026.24.0": 1790510030,
   "com.reddit.frontpage-2026.39.0": 1790510030,
-  "dev.vodik7.atvtools-1.3.2": 1790477803,
+  "dev.vodik7.atvtools-1.3.2": 1790518580,
   "com.google.android.youtube-21.39.522": 1790510030,
   "com.zhiliaoapp.musically-47.1.3": 1790478867,
   "com.facebook.katana-580.0.0.51.74": 1790477803,
   "com.google.android.apps.photos-7.94.0.984908898": 1790477803,
   "bitpit.launcher-1.16.15": 1790025594,
-  "com.byairapp.android-2.39.2": 1790505488
+  "com.byairapp.android-2.39.2": 1790505488,
+  "ch.protonmail.android-7.11.6": 1790518580
 }
