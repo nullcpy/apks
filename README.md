@@ -15,6 +15,11 @@ If you want to contribute APKs to help maintain the cache:
 
 Once added, follow the quick instructions below to submit APKs painlessly!
 
+> [!NOTE]
+> Uploading works on **Windows, Linux and macOS** - the repository ships three
+> equivalent scripts (`upload_apks.ps1`, `upload_apks.sh`, `upload_apks.py`).
+> Use whichever fits your system.
+
 ---
 
 ## 🚀 Quick Start: Submitting APKs
@@ -23,14 +28,15 @@ Once added, follow the quick instructions below to submit APKs painlessly!
 
 You only need the **GitHub CLI (`gh`)** installed and authenticated:
 
-- **Install `gh` (Windows):**
-  ```powershell
-  winget install GitHub.cli
-  ```
-  *(or via Scoop: `scoop install gh`)*
+| OS | Install `gh` |
+| :--- | :--- |
+| **Windows** | `winget install GitHub.cli` *(or via Scoop: `scoop install gh`)* |
+| **macOS** | `brew install gh` |
+| **Linux (Debian/Ubuntu)** | `sudo apt install gh` |
+| **Linux (other distros)** | See https://github.com/cli/cli#installation |
 
-- **Authenticate:**
-  ```powershell
+- **Authenticate** (identical on every OS):
+  ```bash
   gh auth login
   ```
   *(Select `GitHub.com` -> `HTTPS` -> Log in with a web browser)*
@@ -68,8 +74,16 @@ or with a target version code:
 
 ### 3. Uploading (Painless & Automated)
 
+Pick the script that matches your system - all three behave identically:
+
+| Script | Runs on | Requires |
+| :--- | :--- | :--- |
+| `upload_apks.ps1` | Windows | PowerShell 5+ |
+| `upload_apks.sh` | Linux, macOS, Git Bash | Bash (also works on the stock macOS bash 3.2) |
+| `upload_apks.py` | Any OS | Python 3.8+ (no extra packages) |
+
 1. **Clone the repository** (or pull the latest):
-   ```powershell
+   ```bash
    git clone https://github.com/nullcpy/apks.git
    cd apks
    ```
@@ -77,8 +91,21 @@ or with a target version code:
 2. **Drop your renamed APK file(s)** directly into the `apks` folder.
 
 3. **Run the upload script:**
+
+   **Windows (PowerShell):**
    ```powershell
    .\upload_apks.ps1
+   ```
+
+   **Linux / macOS (Bash):**
+   ```bash
+   bash upload_apks.sh
+   ```
+   *(To use `./upload_apks.sh` instead, make it executable once: `chmod +x upload_apks.sh`)*
+
+   **Any system (Python):**
+   ```bash
+   python3 upload_apks.py    # Windows: python upload_apks.py
    ```
 
 **That's it!** The script automatically:
@@ -91,11 +118,35 @@ or with a target version code:
 
 ## 🛠️ Advanced Usage
 
-If you prefer keeping your APKs in a separate download folder rather than moving them into the repo, specify `-ApkFolder`:
+If you prefer keeping your APKs in a separate download folder rather than moving them into the repo, point the script at that folder:
 
 ```powershell
 .\upload_apks.ps1 -ApkFolder "C:\Users\YourName\Downloads"
 ```
+
+```bash
+bash upload_apks.sh --apk-folder ~/Downloads
+python3 upload_apks.py --apk-folder ~/Downloads
+```
+
+The `sh` and `py` scripts also accept the folder as a plain argument:
+
+```bash
+bash upload_apks.sh ~/Downloads
+python3 upload_apks.py ~/Downloads
+```
+
+To upload to a different repository (e.g. your own fork for testing), pass `-Repo` (PowerShell) or `--repo` / `-r` (bash, Python):
+
+```bash
+bash upload_apks.sh --repo myuser/apks
+```
+
+Run `bash upload_apks.sh --help` or `python3 upload_apks.py --help` for the full option list.
+
+> [!WARNING]
+> The scripts delete each APK from the scanned folder right after a successful
+> upload. Point them at a folder you are fine with being emptied.
 
 ---
 

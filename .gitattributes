@@ -1,0 +1,7 @@
+# Keep the shebang lines runnable on Linux/macOS: a CRLF checkout would break
+# them with "/usr/bin/env: 'bash\r': No such file or directory".
+*.sh text eol=lf
+*.py text eol=lf
+
+# Keep this file itself LF so the rules above stay byte-exact everywhere.
+.gitattributes text eol=lf
