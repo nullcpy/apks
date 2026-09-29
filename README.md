@@ -82,13 +82,27 @@ Pick the script that matches your system - all three behave identically:
 | `upload_apks.sh` | Linux, macOS, Git Bash | Bash (also works on the stock macOS bash 3.2) |
 | `upload_apks.py` | Any OS | Python 3.8+ (no extra packages) |
 
-1. **Clone the repository** (or pull the latest):
+1. **Get the repository** - either clone it or download a ZIP:
+
+   **Option A - Git clone** (recommended, refresh later with `git pull`):
    ```bash
    git clone https://github.com/nullcpy/apks.git
    cd apks
    ```
 
-2. **Drop your renamed APK file(s)** directly into the `apks` folder.
+   **Option B - ZIP download** (no Git needed): download
+   [main.zip](https://github.com/nullcpy/apks/archive/refs/heads/main.zip)
+   (or **Code -> Download ZIP** on the repo page), extract it, then enter the
+   folder it creates - GitHub names it `apks-main`:
+   ```bash
+   cd apks-main
+   ```
+   A ZIP is a one-off snapshot, so re-download it whenever you want the latest
+   scripts; uploading works either way because the scripts talk to GitHub
+   through `gh` rather than through your local copy of the repo.
+
+2. **Drop your renamed APK file(s)** directly into that repository folder (the
+   one containing the upload scripts).
 
 3. **Run the upload script:**
 
@@ -101,7 +115,6 @@ Pick the script that matches your system - all three behave identically:
    ```bash
    bash upload_apks.sh
    ```
-   *(To use `./upload_apks.sh` instead, make it executable once: `chmod +x upload_apks.sh`)*
 
    **Any system (Python):**
    ```bash
