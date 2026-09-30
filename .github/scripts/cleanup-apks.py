@@ -145,8 +145,10 @@ def cleanup_releases():
 
     if usage_data_changed:
         print("\n--- Updating usage.json ---")
+        # sort_keys keeps the file in a stable order: two workflows (this one and
+        # rvb's update_usage_tracker.py) rewrite the same JSON and push to main.
         with open(usage_file, 'w', encoding='utf-8') as f:
-            json.dump(usage_data, f, indent=2)
+            json.dump(usage_data, f, indent=2, sort_keys=True)
         run_cmd("git config user.name 'github-actions[bot]'")
         run_cmd("git config user.email 'github-actions[bot]@users.noreply.github.com'")
         run_cmd("git add usage.json")
