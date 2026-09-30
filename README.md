@@ -166,3 +166,14 @@ Run `bash upload_apks.sh --help` or `python3 upload_apks.py --help` for the full
 ## 🧹 Maintenance & Retention
 
 A weekly GitHub Actions workflow (running every Sunday at midnight) (`cleanup-apks.py`) monitors `usage.json` and evicts older APK variants that have not been requested by RVB within 30 days, keeping the cache lean and within GitHub storage quotas.
+
+`usage.json` is machine-managed - both workflows that write it keep its keys sorted so
+their commits stay readable. Do not add or reorder entries by hand: an upload you made
+through the script is indexed automatically at its upload time, and an entry whose asset
+no longer exists is pruned on the next run.
+
+> [!NOTE]
+> The full cache contract - how RVB reads and writes this repository, the retention
+> rules, the `usage.json` key format and file ordering, plus a debugging checklist - is
+> documented in the builder repo:
+> [**nullcpy/rvb → docs/cache-repo.md**](https://github.com/nullcpy/rvb/blob/main/docs/cache-repo.md).
