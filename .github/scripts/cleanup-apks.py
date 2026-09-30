@@ -117,12 +117,12 @@ def cleanup_releases():
 
         print(f"Keeping {len(to_keep_versions)} versions.")
         for v_key, v_assets in to_keep_versions:
-            last_active = datetime.utcfromtimestamp(version_scores[v_key]).strftime('%Y-%m-%d')
+            last_active = datetime.fromtimestamp(version_scores[v_key], datetime.UTC).strftime('%Y-%m-%d')
             print(f"  {v_key} ({len(v_assets)} assets) [Active: {last_active}]")
 
         print(f"Deleting {len(to_delete_versions)} versions (inactive > 30 days):")
         for v_key, v_assets in to_delete_versions:
-            last_active = datetime.utcfromtimestamp(version_scores[v_key]).strftime('%Y-%m-%d')
+            last_active = datetime.fromtimestamp(version_scores[v_key], datetime.UTC).strftime('%Y-%m-%d')
             print(f"  {v_key} ({len(v_assets)} assets) [Active: {last_active}]")
             for asset in v_assets:
                 asset_id = asset['id']
