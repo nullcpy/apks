@@ -16,6 +16,7 @@ KEEP_COUNT = 10
 KEEP_DAYS = 30
 # ==========================================
 
+
 def run_cmd(cmd):
     result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
     if result.returncode != 0:
@@ -23,10 +24,12 @@ def run_cmd(cmd):
         return None
     return result.stdout.strip()
 
+
 def parse_gh_time(time_str):
     # '2024-08-13T10:30:46Z' -> epoch timestamp
     dt = datetime.strptime(time_str, "%Y-%m-%dT%H:%M:%SZ")
     return int(dt.timestamp())
+
 
 def cleanup_releases():
     repo = os.environ.get("GITHUB_REPOSITORY")
@@ -35,7 +38,7 @@ def cleanup_releases():
         sys.exit(1)
 
     print(f"--- Fetching all releases for repo: {repo} ---")
-    
+
     releases_file = "releases_new.json"
     if not os.path.exists(releases_file):
         print(f"File {releases_file} not found.")
@@ -70,13 +73,13 @@ def cleanup_releases():
             continue
 
         print(f"\n--- Processing release: {tag} ---")
-        
+
         version_groups = {}
         for asset in assets:
             name = asset['name']
             version_key = suffix_pattern.sub('', name)
             all_existing_versions.add(version_key)
-            
+
             if version_key not in version_groups:
                 version_groups[version_key] = []
             version_groups[version_key].append(asset)
@@ -86,12 +89,12 @@ def cleanup_releases():
         for v_key, v_assets in version_groups.items():
             gh_time = max(parse_gh_time(a['created_at']) for a in v_assets)
             tracked_time = usage_data.get(v_key, 0)
-            
+
             # Index manually uploaded or legacy files directly into usage.json
             if tracked_time == 0:
                 usage_data[v_key] = gh_time
                 usage_data_changed = True
-                
+
             version_scores[v_key] = max(gh_time, tracked_time)
 
         sorted_versions = sorted(
@@ -102,7 +105,7 @@ def cleanup_releases():
 
         to_keep_versions = sorted_versions[:KEEP_COUNT]
         remaining_versions = sorted_versions[KEEP_COUNT:]
-        
+
         to_delete_versions = []
         for v_key, v_assets in remaining_versions:
             score = version_scores[v_key]
@@ -112,32 +115,40 @@ def cleanup_releases():
                 to_keep_versions.append((v_key, v_assets))
 
         if not to_delete_versions:
-            print(f"Found {len(sorted_versions)} versions, none meet deletion criteria.")
+            print(
+                f"Found {len(sorted_versions)} versions, none meet deletion criteria.")
             continue
 
         print(f"Keeping {len(to_keep_versions)} versions.")
         for v_key, v_assets in to_keep_versions:
-            last_active = datetime.fromtimestamp(version_scores[v_key], timezone.utc).strftime('%Y-%m-%d')
-            print(f"  {v_key} ({len(v_assets)} assets) [Active: {last_active}]")
+            last_active = datetime.fromtimestamp(
+                version_scores[v_key], timezone.utc).strftime('%Y-%m-%d')
+            print(
+                f"  {v_key} ({len(v_assets)} assets) [Active: {last_active}]")
 
-        print(f"Deleting {len(to_delete_versions)} versions (inactive > 30 days):")
+        print(
+            f"Deleting {len(to_delete_versions)} versions (inactive > 30 days):")
         for v_key, v_assets in to_delete_versions:
-            last_active = datetime.fromtimestamp(version_scores[v_key], timezone.utc).strftime('%Y-%m-%d')
-            print(f"  {v_key} ({len(v_assets)} assets) [Active: {last_active}]")
+            last_active = datetime.fromtimestamp(
+                version_scores[v_key], timezone.utc).strftime('%Y-%m-%d')
+            print(
+                f"  {v_key} ({len(v_assets)} assets) [Active: {last_active}]")
             for asset in v_assets:
                 asset_id = asset['id']
                 asset_name = asset['name']
                 print(f"    Deleting asset: {asset_name} (ID: {asset_id})")
                 cmd = f'gh api -X DELETE repos/{repo}/releases/assets/{asset_id}'
                 run_cmd(cmd)
-            
+
             if v_key in usage_data:
                 del usage_data[v_key]
                 usage_data_changed = True
 
-    ghost_keys = [k for k in usage_data.keys() if k not in all_existing_versions]
+    ghost_keys = [k for k in usage_data.keys(
+    ) if k not in all_existing_versions]
     if ghost_keys:
-        print(f"\n--- Pruning {len(ghost_keys)} missing versions from usage.json ---")
+        print(
+            f"\n--- Pruning {len(ghost_keys)} missing versions from usage.json ---")
         for gk in ghost_keys:
             print(f"  Removing ghost entry: {gk}")
             del usage_data[gk]
@@ -150,11 +161,13 @@ def cleanup_releases():
         with open(usage_file, 'w', encoding='utf-8') as f:
             json.dump(usage_data, f, indent=2, sort_keys=True)
         run_cmd("git config user.name 'github-actions[bot]'")
-        run_cmd("git config user.email 'github-actions[bot]@users.noreply.github.com'")
+        run_cmd(
+            "git config user.email 'github-actions[bot]@users.noreply.github.com'")
         run_cmd("git add usage.json")
         run_cmd("git commit -m 'chore: prune deleted versions from usage.json'")
         run_cmd("git push origin main")
         print("Successfully pruned usage.json.")
+
 
 if __name__ == "__main__":
     cleanup_releases()
