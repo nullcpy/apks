@@ -1,3 +1,7 @@
 *.apk
 *.apkm
 *.xapk
+
+# Python bytecode from running the .github/scripts helpers locally
+__pycache__/
+*.pyc
