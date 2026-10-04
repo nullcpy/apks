@@ -2,7 +2,7 @@ name: Cleanup APKs
 
 on:
   schedule:
-    - cron: '0 0 * * 0' # Run at midnight every Sunday
+    - cron: '0 0 1 * *' # Run at midnight UTC on the 1st of every month
   workflow_dispatch:
 
 concurrency:
@@ -14,6 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: write
     timeout-minutes: 30
     steps:
       - name: Checkout
@@ -29,3 +30,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 .github/scripts/cleanup-apks.py
+
+      - name: Trim Workflow Run History
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh api --paginate "repos/${GITHUB_REPOSITORY}/actions/workflows/cleanup-apks.yml/runs" \
+            --jq '.workflow_runs[].id' | tail -n +11 | while read -r run_id; do
+              echo "Deleting workflow run ${run_id}"
+              gh api -X DELETE "repos/${GITHUB_REPOSITORY}/actions/runs/${run_id}" >/dev/null
+            done
