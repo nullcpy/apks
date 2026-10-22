@@ -11,7 +11,7 @@ This repository stores upstream stock APKs across tagged GitHub Releases (one re
 Uploading APKs requires write (collaborator) access to this repository.
 
 If you want to contribute APKs to help maintain the cache:
-👉 **Contact here to get added as a contributor:** [**https://t.me/rvb27/306**](https://t.me/rvb27/306)
+👉 **Contact here to get added as a contributor:** [Discord Server](https://discord.gg/d4VHpybpQq)
 
 Once added, follow the quick instructions below to submit APKs painlessly!
 
