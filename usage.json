@@ -283,7 +283,7 @@
   "com.intsig.camscanner-7.20.0.2606230000": 1791144364,
   "com.kick.mobile-40.33.0": 1793544135,
   "com.kick.mobile-40.34.0": 1794787210,
-  "com.kick.mobile-40.35.4": 1795053462,
+  "com.kick.mobile-40.35.4": 1795123056,
   "com.lemon.lvoverseas-19.2.0": 1788857029,
   "com.lemon.lvoverseas-9.0.0": 1792340132,
   "com.letterboxd.letterboxd-3.5.8": 1791265270,
@@ -361,7 +361,7 @@
   "com.rubenmayayo.reddit-1.14.4": 1794938392,
   "com.rumble.battles-3.14.5": 1788877906,
   "com.rumble.battles-3.21.0": 1794787210,
-  "com.rumble.battles-3.22.0": 1795053462,
+  "com.rumble.battles-3.22.0": 1795123056,
   "com.server.auditor.ssh.client-7.11.2": 1793213078,
   "com.server.auditor.ssh.client-7.9.0": 1791274292,
   "com.sofascore.results-26.09.28": 1792240450,
@@ -545,6 +545,6 @@
   "tv.twitch.android.app-30.7.2": 1789961838,
   "tv.twitch.android.app-31.8.0": 1794787210,
   "tv.twitch.android.app-31.9.0": 1793823770,
-  "tv.twitch.android.app-32.1.0": 1795053462,
+  "tv.twitch.android.app-32.1.0": 1795123056,
   "videoeditor.videorecorder.screenrecorder-2.5.1.1": 1791144364
 }
